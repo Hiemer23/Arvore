@@ -1,0 +1,450 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"13 ./Saida.h
+[; ;./Saida.h: 13: typedef struct {
+[s S51 `*Vuc 1 `*Vuc 1 `uc 1 `ui 1 `uc 1 `uc 1 `i 1 ]
+[n S51 . port tris pinMask tempoTroca valorAtual valorAnterior ultimoTempo ]
+"1649 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 1649: extern volatile __bit TRISB4 __attribute__((address(0x434)));
+[v _TRISB4 `Vb ~T0 @X0 0 e@1076 ]
+"235
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 235:     struct {
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"234
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 234: typedef union {
+[u S7 `S8 1 ]
+[n S7 . . ]
+"246
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 246: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
+[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
+"167
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 167: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"908
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 908: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"229
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"970
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 970: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"15 Saida.c
+[; ;Saida.c: 15: void acionaSaida(Pino_Saida *pino);
+[v _acionaSaida `(v ~T0 @X0 0 ef1`*S51 ]
+"13 ./main.h
+[p x FOSC  =  INTOSCIO   ]
+"14
+[p x WDTE  =  OFF        ]
+"15
+[p x PWRTE  =  OFF       ]
+"16
+[p x MCLRE  =  ON        ]
+"17
+[p x BOREN  =  OFF        ]
+"18
+[p x LVP  =  OFF          ]
+"19
+[p x CPD  =  OFF         ]
+"20
+[p x CP  =  OFF          ]
+"55 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 55: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"62
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 62: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"69
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 69: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"76
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 76: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"162
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 162: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"169
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 169: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"231
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 231: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"293
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 293: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"313
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 313: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"391
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 391: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"448
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 448: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"455
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 455: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"462
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 462: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"469
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 469: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"528
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 528: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"535
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 535: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"606
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 606: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"613
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 613: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"620
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 620: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"627
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 627: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"685
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 685: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"756
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 756: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"763
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 763: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"770
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 770: __asm("CMCON equ 01Fh");
+[; <" CMCON equ 01Fh ;# ">
+"840
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 840: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"910
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 910: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"972
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 972: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1034
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 1034: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1091
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 1091: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1140
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 1140: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"1147
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 1147: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"1204
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 1204: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"1211
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 1211: __asm("EEDATA equ 09Ah");
+[; <" EEDATA equ 09Ah ;# ">
+"1218
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 1218: __asm("EEADR equ 09Bh");
+[; <" EEADR equ 09Bh ;# ">
+"1225
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 1225: __asm("EECON1 equ 09Ch");
+[; <" EECON1 equ 09Ch ;# ">
+"1263
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 1263: __asm("EECON2 equ 09Dh");
+[; <" EECON2 equ 09Dh ;# ">
+"1270
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h: 1270: __asm("VRCON equ 09Fh");
+[; <" VRCON equ 09Fh ;# ">
+"11 Saida.c
+[; ;Saida.c: 11: Pino_Saida Pino[6];
+[v _Pino `S51 ~T0 @X0 -> 6 `i e ]
+[v F514 `(v ~T0 @X0 1 tf ]
+"17
+[; ;Saida.c: 17: __attribute__((inline)) void Init_Saidas2(void){
+[v _Init_Saidas2 `TF514 ~T0 @X0 1 e ]
+{
+[e :U _Init_Saidas2 ]
+[f ]
+"18
+[; ;Saida.c: 18:     TRISB4 = 0;
+[e = _TRISB4 -> -> 0 `i `b ]
+"19
+[; ;Saida.c: 19:     PORTBbits.RB4 = 0;
+[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+"20
+[; ;Saida.c: 20: }
+[e :UE 52 ]
+}
+[v F516 `(v ~T0 @X0 1 tf ]
+"22
+[; ;Saida.c: 22: __attribute__((inline)) void Init_Saidas(void) {
+[v _Init_Saidas `TF516 ~T0 @X0 1 e ]
+{
+[e :U _Init_Saidas ]
+[f ]
+"23
+[; ;Saida.c: 23:     uint8_t initial_value = 0, i = 0;
+[v _initial_value `uc ~T0 @X0 1 a ]
+[e = _initial_value -> -> 0 `i `uc ]
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+"25
+[; ;Saida.c: 25:     Pino[0].port = &PORTA;
+[e = . *U + &U _Pino * -> -> -> 0 `i `ui `ux -> -> # *U &U _Pino `ui `ux 0 &U _PORTA ]
+"26
+[; ;Saida.c: 26:     Pino[0].tris = &TRISA;
+[e = . *U + &U _Pino * -> -> -> 0 `i `ui `ux -> -> # *U &U _Pino `ui `ux 1 &U _TRISA ]
+"27
+[; ;Saida.c: 27:     Pino[0].pinMask = 0b00000001;
+[e = . *U + &U _Pino * -> -> -> 0 `i `ui `ux -> -> # *U &U _Pino `ui `ux 2 -> -> 1 `i `uc ]
+"28
+[; ;Saida.c: 28:     Pino[0].tempoTroca = 1 * 100;
+[e = . *U + &U _Pino * -> -> -> 0 `i `ui `ux -> -> # *U &U _Pino `ui `ux 3 -> * -> 1 `i -> 100 `i `ui ]
+"29
+[; ;Saida.c: 29:     Pino[0].valorAtual = initial_value;
+[e = . *U + &U _Pino * -> -> -> 0 `i `ui `ux -> -> # *U &U _Pino `ui `ux 4 _initial_value ]
+"30
+[; ;Saida.c: 30:     Pino[0].valorAnterior = !initial_value;
+[e = . *U + &U _Pino * -> -> -> 0 `i `ui `ux -> -> # *U &U _Pino `ui `ux 5 -> -> ! != -> _initial_value `i -> 0 `i `i `uc ]
+"31
+[; ;Saida.c: 31:     Pino[0].ultimoTempo = 0;
+[e = . *U + &U _Pino * -> -> -> 0 `i `ui `ux -> -> # *U &U _Pino `ui `ux 6 -> 0 `i ]
+"34
+[; ;Saida.c: 34:     Pino[1].port = &PORTA;
+[e = . *U + &U _Pino * -> -> -> 1 `i `ui `ux -> -> # *U &U _Pino `ui `ux 0 &U _PORTA ]
+"35
+[; ;Saida.c: 35:     Pino[1].tris = &TRISA;
+[e = . *U + &U _Pino * -> -> -> 1 `i `ui `ux -> -> # *U &U _Pino `ui `ux 1 &U _TRISA ]
+"36
+[; ;Saida.c: 36:     Pino[1].pinMask = 0b00000010;
+[e = . *U + &U _Pino * -> -> -> 1 `i `ui `ux -> -> # *U &U _Pino `ui `ux 2 -> -> 2 `i `uc ]
+"37
+[; ;Saida.c: 37:     Pino[1].tempoTroca = 1 * 100;
+[e = . *U + &U _Pino * -> -> -> 1 `i `ui `ux -> -> # *U &U _Pino `ui `ux 3 -> * -> 1 `i -> 100 `i `ui ]
+"38
+[; ;Saida.c: 38:     Pino[1].valorAtual = initial_value;
+[e = . *U + &U _Pino * -> -> -> 1 `i `ui `ux -> -> # *U &U _Pino `ui `ux 4 _initial_value ]
+"39
+[; ;Saida.c: 39:     Pino[1].valorAnterior = !initial_value;
+[e = . *U + &U _Pino * -> -> -> 1 `i `ui `ux -> -> # *U &U _Pino `ui `ux 5 -> -> ! != -> _initial_value `i -> 0 `i `i `uc ]
+"40
+[; ;Saida.c: 40:     Pino[1].ultimoTempo = 0;
+[e = . *U + &U _Pino * -> -> -> 1 `i `ui `ux -> -> # *U &U _Pino `ui `ux 6 -> 0 `i ]
+"43
+[; ;Saida.c: 43:     Pino[2].port = &PORTA;
+[e = . *U + &U _Pino * -> -> -> 2 `i `ui `ux -> -> # *U &U _Pino `ui `ux 0 &U _PORTA ]
+"44
+[; ;Saida.c: 44:     Pino[2].tris = &TRISA;
+[e = . *U + &U _Pino * -> -> -> 2 `i `ui `ux -> -> # *U &U _Pino `ui `ux 1 &U _TRISA ]
+"45
+[; ;Saida.c: 45:     Pino[2].pinMask = 0b00000100;
+[e = . *U + &U _Pino * -> -> -> 2 `i `ui `ux -> -> # *U &U _Pino `ui `ux 2 -> -> 4 `i `uc ]
+"46
+[; ;Saida.c: 46:     Pino[2].tempoTroca = 1 * 100;
+[e = . *U + &U _Pino * -> -> -> 2 `i `ui `ux -> -> # *U &U _Pino `ui `ux 3 -> * -> 1 `i -> 100 `i `ui ]
+"47
+[; ;Saida.c: 47:     Pino[2].valorAtual = initial_value;
+[e = . *U + &U _Pino * -> -> -> 2 `i `ui `ux -> -> # *U &U _Pino `ui `ux 4 _initial_value ]
+"48
+[; ;Saida.c: 48:     Pino[2].valorAnterior = !initial_value;
+[e = . *U + &U _Pino * -> -> -> 2 `i `ui `ux -> -> # *U &U _Pino `ui `ux 5 -> -> ! != -> _initial_value `i -> 0 `i `i `uc ]
+"49
+[; ;Saida.c: 49:     Pino[2].ultimoTempo = 0;
+[e = . *U + &U _Pino * -> -> -> 2 `i `ui `ux -> -> # *U &U _Pino `ui `ux 6 -> 0 `i ]
+"52
+[; ;Saida.c: 52:     Pino[3].port = &PORTA;
+[e = . *U + &U _Pino * -> -> -> 3 `i `ui `ux -> -> # *U &U _Pino `ui `ux 0 &U _PORTA ]
+"53
+[; ;Saida.c: 53:     Pino[3].tris = &TRISA;
+[e = . *U + &U _Pino * -> -> -> 3 `i `ui `ux -> -> # *U &U _Pino `ui `ux 1 &U _TRISA ]
+"54
+[; ;Saida.c: 54:     Pino[3].pinMask = 0b00010000;
+[e = . *U + &U _Pino * -> -> -> 3 `i `ui `ux -> -> # *U &U _Pino `ui `ux 2 -> -> 16 `i `uc ]
+"55
+[; ;Saida.c: 55:     Pino[3].tempoTroca = 1 * 100;
+[e = . *U + &U _Pino * -> -> -> 3 `i `ui `ux -> -> # *U &U _Pino `ui `ux 3 -> * -> 1 `i -> 100 `i `ui ]
+"56
+[; ;Saida.c: 56:     Pino[3].valorAtual = initial_value;
+[e = . *U + &U _Pino * -> -> -> 3 `i `ui `ux -> -> # *U &U _Pino `ui `ux 4 _initial_value ]
+"57
+[; ;Saida.c: 57:     Pino[3].valorAnterior = !initial_value;
+[e = . *U + &U _Pino * -> -> -> 3 `i `ui `ux -> -> # *U &U _Pino `ui `ux 5 -> -> ! != -> _initial_value `i -> 0 `i `i `uc ]
+"58
+[; ;Saida.c: 58:     Pino[3].ultimoTempo = 0;
+[e = . *U + &U _Pino * -> -> -> 3 `i `ui `ux -> -> # *U &U _Pino `ui `ux 6 -> 0 `i ]
+"61
+[; ;Saida.c: 61:     Pino[4].port = &PORTA;
+[e = . *U + &U _Pino * -> -> -> 4 `i `ui `ux -> -> # *U &U _Pino `ui `ux 0 &U _PORTA ]
+"62
+[; ;Saida.c: 62:     Pino[4].tris = &TRISA;
+[e = . *U + &U _Pino * -> -> -> 4 `i `ui `ux -> -> # *U &U _Pino `ui `ux 1 &U _TRISA ]
+"63
+[; ;Saida.c: 63:     Pino[4].pinMask = 0b01000000;
+[e = . *U + &U _Pino * -> -> -> 4 `i `ui `ux -> -> # *U &U _Pino `ui `ux 2 -> -> 64 `i `uc ]
+"64
+[; ;Saida.c: 64:     Pino[4].tempoTroca = 1 * 100;
+[e = . *U + &U _Pino * -> -> -> 4 `i `ui `ux -> -> # *U &U _Pino `ui `ux 3 -> * -> 1 `i -> 100 `i `ui ]
+"65
+[; ;Saida.c: 65:     Pino[4].valorAtual = initial_value;
+[e = . *U + &U _Pino * -> -> -> 4 `i `ui `ux -> -> # *U &U _Pino `ui `ux 4 _initial_value ]
+"66
+[; ;Saida.c: 66:     Pino[4].valorAnterior = !initial_value;
+[e = . *U + &U _Pino * -> -> -> 4 `i `ui `ux -> -> # *U &U _Pino `ui `ux 5 -> -> ! != -> _initial_value `i -> 0 `i `i `uc ]
+"67
+[; ;Saida.c: 67:     Pino[4].ultimoTempo = 0;
+[e = . *U + &U _Pino * -> -> -> 4 `i `ui `ux -> -> # *U &U _Pino `ui `ux 6 -> 0 `i ]
+"70
+[; ;Saida.c: 70:     Pino[5].port = &PORTB;
+[e = . *U + &U _Pino * -> -> -> 5 `i `ui `ux -> -> # *U &U _Pino `ui `ux 0 &U _PORTB ]
+"71
+[; ;Saida.c: 71:     Pino[5].tris = &TRISB;
+[e = . *U + &U _Pino * -> -> -> 5 `i `ui `ux -> -> # *U &U _Pino `ui `ux 1 &U _TRISB ]
+"72
+[; ;Saida.c: 72:     Pino[5].pinMask = 0b00010000;
+[e = . *U + &U _Pino * -> -> -> 5 `i `ui `ux -> -> # *U &U _Pino `ui `ux 2 -> -> 16 `i `uc ]
+"73
+[; ;Saida.c: 73:     Pino[5].tempoTroca = 5 * 100;
+[e = . *U + &U _Pino * -> -> -> 5 `i `ui `ux -> -> # *U &U _Pino `ui `ux 3 -> * -> 5 `i -> 100 `i `ui ]
+"74
+[; ;Saida.c: 74:     Pino[5].valorAtual = initial_value;
+[e = . *U + &U _Pino * -> -> -> 5 `i `ui `ux -> -> # *U &U _Pino `ui `ux 4 _initial_value ]
+"75
+[; ;Saida.c: 75:     Pino[5].valorAnterior = !initial_value;
+[e = . *U + &U _Pino * -> -> -> 5 `i `ui `ux -> -> # *U &U _Pino `ui `ux 5 -> -> ! != -> _initial_value `i -> 0 `i `i `uc ]
+"76
+[; ;Saida.c: 76:     Pino[5].ultimoTempo = 0;
+[e = . *U + &U _Pino * -> -> -> 5 `i `ui `ux -> -> # *U &U _Pino `ui `ux 6 -> 0 `i ]
+"79
+[; ;Saida.c: 79:     for (i = 0; i < 6; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 54  ]
+[e $U 55  ]
+[e :U 54 ]
+{
+"80
+[; ;Saida.c: 80:         *(Pino[i].tris) &= ~(Pino[i].pinMask);
+[e =& *U . *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux 1 -> ~ -> . *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux 2 `i `uc ]
+"81
+[; ;Saida.c: 81:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 54  ]
+[e :U 55 ]
+}
+"82
+[; ;Saida.c: 82: }
+[e :UE 53 ]
+}
+"84
+[; ;Saida.c: 84: void Task_Saida(void) {
+[v _Task_Saida `(v ~T0 @X0 1 ef ]
+{
+[e :U _Task_Saida ]
+[f ]
+"85
+[; ;Saida.c: 85:     uint8_t i = 0;
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+"86
+[; ;Saida.c: 86:     for (i = 0; i < 6; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 58  ]
+[e $U 59  ]
+[e :U 58 ]
+{
+"87
+[; ;Saida.c: 87:         if (Pino[i].ultimoTempo <= 0) {
+[e $ ! <= . *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux 6 -> 0 `i 61  ]
+{
+"88
+[; ;Saida.c: 88:             Pino[i].ultimoTempo = Pino[i].tempoTroca;
+[e = . *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux 6 -> . *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux 3 `i ]
+"89
+[; ;Saida.c: 89:             if ((Pino[i].valorAtual == 1)) {
+[e $ ! == -> . *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux 4 `i -> 1 `i 62  ]
+{
+"90
+[; ;Saida.c: 90:                 Pino[i].valorAtual = 0;
+[e = . *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux 4 -> -> 0 `i `uc ]
+"91
+[; ;Saida.c: 91:                 acionaSaida(&Pino[i]);
+[e ( _acionaSaida (1 &U *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux ]
+"92
+[; ;Saida.c: 92:             }
+}
+[e $U 63  ]
+"93
+[; ;Saida.c: 93:             else {
+[e :U 62 ]
+{
+"94
+[; ;Saida.c: 94:                 Pino[i].valorAtual = 1;
+[e = . *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux 4 -> -> 1 `i `uc ]
+"95
+[; ;Saida.c: 95:                 acionaSaida(&Pino[i]);
+[e ( _acionaSaida (1 &U *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux ]
+"96
+[; ;Saida.c: 96:             }
+}
+[e :U 63 ]
+"99
+[; ;Saida.c: 99:         } else {
+}
+[e $U 64  ]
+[e :U 61 ]
+{
+"100
+[; ;Saida.c: 100:             Pino[i].ultimoTempo = Pino[i].ultimoTempo - 100;
+[e = . *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux 6 - . *U + &U _Pino * -> _i `ux -> -> # *U &U _Pino `ui `ux 6 -> 100 `i ]
+"101
+[; ;Saida.c: 101:         }
+}
+[e :U 64 ]
+"103
+[; ;Saida.c: 103:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 58  ]
+[e :U 59 ]
+}
+"104
+[; ;Saida.c: 104: }
+[e :UE 57 ]
+}
+"106
+[; ;Saida.c: 106: void acionaSaida(Pino_Saida *pino) {
+[v _acionaSaida `(v ~T0 @X0 1 ef1`*S51 ]
+{
+[e :U _acionaSaida ]
+[v _pino `*S51 ~T0 @X0 1 r1 ]
+[f ]
+"107
+[; ;Saida.c: 107:     if (pino->valorAtual) {
+[e $ ! != -> . *U _pino 4 `i -> 0 `i 66  ]
+{
+"108
+[; ;Saida.c: 108:         *(pino->port) |= (pino->pinMask);
+[e =| *U . *U _pino 0 -> . *U _pino 2 `uc ]
+"109
+[; ;Saida.c: 109:     } else {
+}
+[e $U 67  ]
+[e :U 66 ]
+{
+"110
+[; ;Saida.c: 110:         *(pino->port) &= ~(pino->pinMask);
+[e =& *U . *U _pino 0 -> ~ -> . *U _pino 2 `i `uc ]
+"111
+[; ;Saida.c: 111:     }
+}
+[e :U 67 ]
+"112
+[; ;Saida.c: 112: }
+[e :UE 65 ]
+}

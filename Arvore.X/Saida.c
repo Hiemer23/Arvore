@@ -14,6 +14,11 @@ Pino_Saida Pino[QTD_SAIDAS];
 
 void acionaSaida(Pino_Saida *pino);
 
+inline void Init_Saidas2(void){
+    TRISB4 = 0;
+    PORTBbits.RB4 = 0;
+}
+
 inline void Init_Saidas(void) {
     uint8_t initial_value = 0, i = 0;
     //OUT1
@@ -61,24 +66,40 @@ inline void Init_Saidas(void) {
     Pino[4].valorAnterior = !initial_value;
     Pino[4].ultimoTempo = 0;
 
+    //OUT6
+    Pino[5].port = &PORTB;
+    Pino[5].tris = &TRISB;
+    Pino[5].pinMask = 0b00010000; // PORTB4
+    Pino[5].tempoTroca = 5 * SAIDA_TASK_TIME;
+    Pino[5].valorAtual = initial_value;
+    Pino[5].valorAnterior = !initial_value;
+    Pino[5].ultimoTempo = 0;
+
     //Define os pinos como saida(tris + pinmask = 0) ex: TRISA0 = 0;
     for (i = 0; i < QTD_SAIDAS; i++) {
-        *(Pino[0].tris) &= ~(Pino[0].pinMask);
+        *(Pino[i].tris) &= ~(Pino[i].pinMask);
     }
 }
 
 void Task_Saida(void) {
     uint8_t i = 0;
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < QTD_SAIDAS; i++) {
         if (Pino[i].ultimoTempo <= 0) {
-            if ((Pino[i].valorAtual != Pino[i].valorAnterior)) {
-                Pino[i].valorAnterior = Pino[i].valorAtual;
+            Pino[i].ultimoTempo = Pino[i].tempoTroca;
+            if ((Pino[i].valorAtual == 1)) {
+                Pino[i].valorAtual = 0;
                 acionaSaida(&Pino[i]);
-                continue;
             }
+            else {
+                Pino[i].valorAtual = 1;
+                acionaSaida(&Pino[i]);
+            }
+
+
         } else {
-            Pino[i].ultimoTempo -= SAIDA_TASK_TIME;
+            Pino[i].ultimoTempo = Pino[i].ultimoTempo - SAIDA_TASK_TIME;
         }
+
     }
 }
 

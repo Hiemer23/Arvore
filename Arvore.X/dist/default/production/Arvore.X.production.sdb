@@ -1,0 +1,170 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F628A ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"16 C:\Users\andrey.hiemer\Desktop\Arvore.X\Init.c
+[v _Inicializar_Hardware Inicializar_Hardware `(v  1 e 1 0 ]
+"26
+[v _Init_Osc Init_Osc `T(v  1 e 1 0 ]
+"32
+[v _Init_Timer Init_Timer `T(v  1 e 1 0 ]
+"14 C:\Users\andrey.hiemer\Desktop\Arvore.X\main.c
+[v _interruptsManager interruptsManager `II(v  1 e 1 0 ]
+"23
+[v _tempo100_ms tempo100_ms `(v  1 e 1 0 ]
+"30
+[v _main main `(v  1 e 1 0 ]
+"22 C:\Users\andrey.hiemer\Desktop\Arvore.X\Saida.c
+[v _Init_Saidas Init_Saidas `T(v  1 e 1 0 ]
+"84
+[v _Task_Saida Task_Saida `(v  1 e 1 0 ]
+"106
+[v _acionaSaida acionaSaida `(v  1 e 1 0 ]
+"60 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"167
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"229
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S200 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"246
+[u S209 . 1 `S200 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES209  1 e 1 @6 ]
+[s S22 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"334
+[s S31 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
+[s S149 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"858
+[s S156 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S160 . 1 `S149 1 . 1 0 `S156 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES160  1 e 1 @129 ]
+"908
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"970
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S124 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 OSCF 1 0 :1:3 
+]
+"1108
+[s S129 . 1 `uc 1 nBO 1 0 :1:0 
+]
+[s S131 . 1 `uc 1 nBOD 1 0 :1:0 
+]
+[u S133 . 1 `S124 1 . 1 0 `S129 1 . 1 0 `S131 1 . 1 0 ]
+[v _PCONbits PCONbits `VES133  1 e 1 @142 ]
+"1649
+[v _TRISB4 TRISB4 `VEb  1 e 0 @1076 ]
+"12 C:\Users\andrey.hiemer\Desktop\Arvore.X\main.c
+[v _counter_100ms counter_100ms `uc  1 e 1 0 ]
+[s S191 . 11 `*.39VEuc 1 port 2 0 `*.39VEuc 1 tris 2 2 `uc 1 pinMask 1 4 `ui 1 tempoTroca 2 5 `uc 1 valorAtual 1 7 `uc 1 valorAnterior 1 8 `i 1 ultimoTempo 2 9 ]
+"11 C:\Users\andrey.hiemer\Desktop\Arvore.X\Saida.c
+[v _Pino Pino `[6]S191  1 e 66 0 ]
+"30 C:\Users\andrey.hiemer\Desktop\Arvore.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"40
+} 0
+"23
+[v _tempo100_ms tempo100_ms `(v  1 e 1 0 ]
+{
+"28
+} 0
+"84 C:\Users\andrey.hiemer\Desktop\Arvore.X\Saida.c
+[v _Task_Saida Task_Saida `(v  1 e 1 0 ]
+{
+"85
+[v Task_Saida@i i `uc  1 a 1 7 ]
+"104
+} 0
+"106
+[v _acionaSaida acionaSaida `(v  1 e 1 0 ]
+{
+[v acionaSaida@pino pino `*.4S191  1 a 1 wreg ]
+[v acionaSaida@pino pino `*.4S191  1 a 1 wreg ]
+[v acionaSaida@pino pino `*.4S191  1 a 1 6 ]
+"112
+} 0
+"16 C:\Users\andrey.hiemer\Desktop\Arvore.X\Init.c
+[v _Inicializar_Hardware Inicializar_Hardware `(v  1 e 1 0 ]
+{
+"24
+} 0
+"32
+[v _Init_Timer Init_Timer `T(v  1 e 1 0 ]
+{
+"39
+} 0
+"22 C:\Users\andrey.hiemer\Desktop\Arvore.X\Saida.c
+[v _Init_Saidas Init_Saidas `T(v  1 e 1 0 ]
+{
+"23
+[v Init_Saidas@i i `uc  1 a 1 7 ]
+"82
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 5 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 3 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 6 ]
+"51
+} 0
+"26 C:\Users\andrey.hiemer\Desktop\Arvore.X\Init.c
+[v _Init_Osc Init_Osc `T(v  1 e 1 0 ]
+{
+"30
+} 0
+"14 C:\Users\andrey.hiemer\Desktop\Arvore.X\main.c
+[v _interruptsManager interruptsManager `II(v  1 e 1 0 ]
+{
+"21
+} 0
