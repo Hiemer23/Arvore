@@ -1185,20 +1185,16 @@ __attribute__((inline)) void Init_Saidas(void);
 
 
 Pino_Saida Pino[6];
+uint8_t PortA_extra = 0b00000000;
 
 
 
 void acionaSaida(Pino_Saida *pino);
 
-__attribute__((inline)) void Init_Saidas2(void){
-    TRISB4 = 0;
-    PORTBbits.RB4 = 0;
-}
-
 __attribute__((inline)) void Init_Saidas(void) {
     uint8_t initial_value = 0, i = 0;
 
-    Pino[0].port = &PORTA;
+    Pino[0].port = &PortA_extra;
     Pino[0].tris = &TRISA;
     Pino[0].pinMask = 0b00000001;
     Pino[0].tempoTroca = 1 * 100;
@@ -1207,16 +1203,16 @@ __attribute__((inline)) void Init_Saidas(void) {
     Pino[0].ultimoTempo = 0;
 
 
-    Pino[1].port = &PORTA;
+    Pino[1].port = &PortA_extra;
     Pino[1].tris = &TRISA;
     Pino[1].pinMask = 0b00000010;
-    Pino[1].tempoTroca = 1 * 100;
-    Pino[1].valorAtual = initial_value;
-    Pino[1].valorAnterior = !initial_value;
+    Pino[1].tempoTroca = 2 * 100;
+    Pino[1].valorAtual = !initial_value;
+    Pino[1].valorAnterior = initial_value;
     Pino[1].ultimoTempo = 0;
 
 
-    Pino[2].port = &PORTA;
+    Pino[2].port = &PortA_extra;
     Pino[2].tris = &TRISA;
     Pino[2].pinMask = 0b00000100;
     Pino[2].tempoTroca = 1 * 100;
@@ -1225,21 +1221,21 @@ __attribute__((inline)) void Init_Saidas(void) {
     Pino[2].ultimoTempo = 0;
 
 
-    Pino[3].port = &PORTA;
+    Pino[3].port = &PortA_extra;
     Pino[3].tris = &TRISA;
     Pino[3].pinMask = 0b00010000;
-    Pino[3].tempoTroca = 1 * 100;
+    Pino[3].tempoTroca = 2 * 100;
     Pino[3].valorAtual = initial_value;
     Pino[3].valorAnterior = !initial_value;
     Pino[3].ultimoTempo = 0;
 
 
-    Pino[4].port = &PORTA;
+    Pino[4].port = &PortA_extra;
     Pino[4].tris = &TRISA;
     Pino[4].pinMask = 0b01000000;
     Pino[4].tempoTroca = 1 * 100;
-    Pino[4].valorAtual = initial_value;
-    Pino[4].valorAnterior = !initial_value;
+    Pino[4].valorAtual = !initial_value;
+    Pino[4].valorAnterior = initial_value;
     Pino[4].ultimoTempo = 0;
 
 
@@ -1265,18 +1261,22 @@ void Task_Saida(void) {
             if ((Pino[i].valorAtual == 1)) {
                 Pino[i].valorAtual = 0;
                 acionaSaida(&Pino[i]);
+                continue;
             }
             else {
                 Pino[i].valorAtual = 1;
                 acionaSaida(&Pino[i]);
+                continue;
             }
 
 
         } else {
             Pino[i].ultimoTempo = Pino[i].ultimoTempo - 100;
+            continue;
         }
 
     }
+    PORTA = PortA_extra;
 }
 
 void acionaSaida(Pino_Saida *pino) {
