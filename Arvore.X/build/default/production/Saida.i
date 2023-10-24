@@ -1186,12 +1186,14 @@ __attribute__((inline)) void Init_Saidas(void);
 
 Pino_Saida Pino[6];
 uint8_t PortA_extra = 0b00000000;
+uint8_t PortB_extra = 0b00000000;
 
 
 
 void acionaSaida(Pino_Saida *pino);
 
-__attribute__((inline)) void Init_Saidas(void) {
+__attribute__((inline)) void Init_Saidas(void)
+{
     uint8_t initial_value = 0, i = 0;
 
     Pino[0].port = &PortA_extra;
@@ -1221,9 +1223,9 @@ __attribute__((inline)) void Init_Saidas(void) {
     Pino[2].ultimoTempo = 0;
 
 
-    Pino[3].port = &PortA_extra;
-    Pino[3].tris = &TRISA;
-    Pino[3].pinMask = 0b00010000;
+    Pino[3].port = &PortB_extra;
+    Pino[3].tris = &TRISB;
+    Pino[3].pinMask = 0b00000001;
     Pino[3].tempoTroca = 2 * 100;
     Pino[3].valorAtual = initial_value;
     Pino[3].valorAnterior = !initial_value;
@@ -1239,7 +1241,7 @@ __attribute__((inline)) void Init_Saidas(void) {
     Pino[4].ultimoTempo = 0;
 
 
-    Pino[5].port = &PORTB;
+    Pino[5].port = &PortB_extra;
     Pino[5].tris = &TRISB;
     Pino[5].pinMask = 0b00010000;
     Pino[5].tempoTroca = 5 * 100;
@@ -1248,41 +1250,51 @@ __attribute__((inline)) void Init_Saidas(void) {
     Pino[5].ultimoTempo = 0;
 
 
-    for (i = 0; i < 6; i++) {
+    for (i = 0; i < 6; i++)
+    {
         *(Pino[i].tris) &= ~(Pino[i].pinMask);
     }
 }
 
-void Task_Saida(void) {
+void Task_Saida(void)
+{
     uint8_t i = 0;
-    for (i = 0; i < 6; i++) {
-        if (Pino[i].ultimoTempo <= 0) {
+    for (i = 0; i < 6; i++)
+    {
+        if (Pino[i].ultimoTempo <= 0)
+        {
             Pino[i].ultimoTempo = Pino[i].tempoTroca;
-            if ((Pino[i].valorAtual == 1)) {
+            if ((Pino[i].valorAtual == 1))
+            {
                 Pino[i].valorAtual = 0;
                 acionaSaida(&Pino[i]);
                 continue;
             }
-            else {
+            else
+            {
                 Pino[i].valorAtual = 1;
                 acionaSaida(&Pino[i]);
                 continue;
             }
-
-
-        } else {
+        }
+        else
+        {
             Pino[i].ultimoTempo = Pino[i].ultimoTempo - 100;
             continue;
         }
-
     }
     PORTA = PortA_extra;
+    PORTB = PortB_extra;
 }
 
-void acionaSaida(Pino_Saida *pino) {
-    if (pino->valorAtual) {
+void acionaSaida(Pino_Saida *pino)
+{
+    if (pino->valorAtual)
+    {
         *(pino->port) |= (pino->pinMask);
-    } else {
+    }
+    else
+    {
         *(pino->port) &= ~(pino->pinMask);
     }
 }
