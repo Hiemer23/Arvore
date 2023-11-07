@@ -189,4 +189,6 @@ Para a montagem do micro controlador levou-se em consideração as especificaç�
 ![Esquematico](Imagens/Esquematico.svg)
 
 ## Programa do projeto
-[Link to Header](#módulo-de-saídas)
+O programa do projeto resume-se em uma função para iniciar o microprocessador e definir os pinos e clocks, após isso inicia-se a rotina para atualizar as saídas a cada múltiplo de 100ms, e através disso ocorre a piscada dos leds.
+
+[**Link do Código**](https://github.com/Hiemer23/Arvore/tree/main/Arvore.X)
