@@ -3,7 +3,7 @@
 ### Materiais do Projeto Totais
 
 | Componentes | Quantidades |
-| --- | --- |
+| :---: | :---: |
 | Fonte DC 12V 1A | 1 |
 | Led Vermelho | 7 |
 | Led Verde | 6 |
@@ -23,7 +23,7 @@
 ### Componentes Utilizados nesse módulo
 
 | Componentes | Quantidades |
-| --- | --- |
+| :---: | :---: |
 | Led Vermelho | 7 |
 | Led Verde | 6 |
 | Led Amarelo | 6 |
@@ -37,7 +37,7 @@
 Após testes em bancada, viu-se que a corrente para o LED ligar com bastante intensidade é cerca de 50mA. Dessa forma podemos calcular os resistores em série com os leds, para isso serão analisadas os seguintes valores.
 
 | Parâmetro | Corrente de base | Tensão de saturação |
-| --- | --- | --- |
+| :---: | :---: | :---: |
 | VCEmin(Saturação) | 12mA | 2V |
 | VCEmáx(Saturação) | 20mA | 4V |
 | VBE | - | 2,5V |
@@ -120,14 +120,14 @@ $$
 
 Por essa razão serão utilizados somente resistores de 100Ω.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7c9ea055-b7a2-4b25-8504-1921b46ec250/ad80b003-7864-431a-84f2-71a0ec649164/Untitled.png)
+![Saida](Imagens/Saida.png)
 
 ## Regulador de tensão LM7805
 
 ### Componentes Utilizados nesse módulo
 
 | Componentes | Quantidades |
-| --- | --- |
+| :---: | :---: |
 | Fonte DC 12V 1A | 1 |
 | LM7805 | 1 |
 | Capacitor 100nF | 2 |
@@ -138,14 +138,14 @@ O uso do 7805 foi projetado à corrente consumida pelo micro controlador e as su
 
 Sendo assim foi seguida a montagem básica do 7805, com capacitor na entrada e saída.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7c9ea055-b7a2-4b25-8504-1921b46ec250/38dbc5da-bf5e-4816-ac6a-e0a4c7eb395d/Untitled.png)
+![Entrada](Imagens/Entrada.png)
 
 ## Gravador PICKIT3
 
 ### Componentes Utilizados nesse módulo
 
 | Componentes | Quantidades |
-| --- | --- |
+| :---: | :---: |
 | Resistor 10kΩ | 1 |
 | Resistor 100Ω | 3 |
 | Conector KK Macho 5 pinos | 1 |
@@ -154,14 +154,14 @@ Sendo assim foi seguida a montagem básica do 7805, com capacitor na entrada e s
 
 Para realizar a gravação, seguiu-se o especificado no datasheet, colocando resistores entre os pinos e deixando o MCLR em nível baixo.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7c9ea055-b7a2-4b25-8504-1921b46ec250/9931c36e-e486-46ff-8609-7749eb2cadd7/Untitled.png)
+![Gravador](Imagens/Gravador.png)
 
 ## Microprocessador do circuito
 
 ### Componentes Utilizados nesse módulo
 
 | Componentes | Quantidades |
-| --- | --- |
+| :---: | :---: |
 | Led Branco | 1 |
 | PIC16F628A | 1 |
 | Capacitor 10nF | 1 |
@@ -171,10 +171,10 @@ Para realizar a gravação, seguiu-se o especificado no datasheet, colocando res
 
 Para a montagem do micro controlador levou-se em consideração as especificações do datasheet, e a sua montagem foi respeitando somente uma função para cada pino. 
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7c9ea055-b7a2-4b25-8504-1921b46ec250/6ccab66e-0337-4189-a5dd-33d2355ac77b/Untitled.png)
+![Micro](Imagens/Microprocessador.png)
 
 ## Esquemático do projeto
 
-[Esquematico.pdf](https://prod-files-secure.s3.us-west-2.amazonaws.com/7c9ea055-b7a2-4b25-8504-1921b46ec250/d9e5031f-3a99-4673-804d-151fc7925066/Esquematico.pdf)
+![Esquematico](Imagens/Esquematico.svg)
 
 ## Programa do projeto
