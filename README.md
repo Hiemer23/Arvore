@@ -19,6 +19,8 @@
 *******
 ## Materiais do Projeto Totais
 
+<div align="center">
+
 | Componentes | Quantidades |
 | :---: | :---: |
 | Fonte DC 12V 1A | 1 |
@@ -35,9 +37,13 @@
 | Capacitor 10nF | 1 |
 | Conector KK Macho 5 pinos | 1 |
 
+</div>
+
 ## Módulo de Saídas
 
 ### Componentes Utilizados nesse módulo
+
+<div align="center">
 
 | Componentes | Quantidades |
 | :---: | :---: |
@@ -49,15 +55,21 @@
 | 100Ω | 15 |
 | 10kΩ | 5 |
 
+</div>
+
 ### Desenvolvimento Técnico
 
 Após testes em bancada, viu-se que a corrente para o LED ligar com bastante intensidade é cerca de 50mA. Dessa forma podemos calcular os resistores em série com os leds, para isso serão analisadas os seguintes valores.
+
+<div align="center">
 
 | Parâmetro | Corrente de base | Tensão de saturação |
 | :---: | :---: | :---: |
 | VCEmin(Saturação) | 12mA | 2V |
 | VCEmáx(Saturação) | 20mA | 4V |
 | VBE | - | 2,5V |
+
+</div>
 
 E levando em conta o ganho do TIP121 sendo:
 
@@ -137,11 +149,17 @@ $$
 
 Por essa razão serão utilizados somente resistores de 100Ω.
 
+<div align="center">
+  
 ![Saida](Imagens/Saida.png)
+
+</div>
 
 ## Regulador de tensão LM7805
 
 ### Componentes Utilizados nesse módulo
+
+<div align="center">
 
 | Componentes | Quantidades |
 | :---: | :---: |
@@ -149,17 +167,25 @@ Por essa razão serão utilizados somente resistores de 100Ω.
 | LM7805 | 1 |
 | Capacitor 100nF | 2 |
 
+</div>
+
 ### Desenvolvimento Técnico
 
 O uso do 7805 foi projetado à corrente consumida pelo micro controlador e as suas portas para o acionamento das saídas.
 
 Sendo assim foi seguida a montagem básica do 7805, com capacitor na entrada e saída.
 
+<div align="center">
+
 ![Entrada](Imagens/Entrada.png)
+
+</div>
 
 ## Gravador PICKIT3
 
 ### Componentes Utilizados nesse módulo
+
+<div align="center">
 
 | Componentes | Quantidades |
 | :---: | :---: |
@@ -167,15 +193,23 @@ Sendo assim foi seguida a montagem básica do 7805, com capacitor na entrada e s
 | Resistor 100Ω | 3 |
 | Conector KK Macho 5 pinos | 1 |
 
+</div>
+
 ### Desenvolvimento Técnico
 
 Para realizar a gravação, seguiu-se o especificado no datasheet, colocando resistores entre os pinos e deixando o MCLR em nível baixo.
 
+<div align="center">
+
 ![Gravador](Imagens/Gravador.png)
+
+</div>
 
 ## Microprocessador do circuito
 
 ### Componentes Utilizados nesse módulo
+
+<div align="center">
 
 | Componentes | Quantidades |
 | :---: | :---: |
@@ -184,15 +218,25 @@ Para realizar a gravação, seguiu-se o especificado no datasheet, colocando res
 | Capacitor 10nF | 1 |
 | Resistor 10kΩ | 1 |
 
+</div>
+
 ### Desenvolvimento Técnico
 
 Para a montagem do micro controlador levou-se em consideração as especificações do datasheet, e a sua montagem foi respeitando somente uma função para cada pino. 
 
+<div align="center">
+
 ![Micro](Imagens/Microprocessador.png)
+
+</div>
 
 ## Esquemático do projeto
 
+<div align="center">
+
 ![Esquematico](Imagens/Esquematico.svg)
+
+</div>
 
 ## Programa do projeto
 O programa do projeto resume-se em uma função para iniciar o microprocessador e definir os pinos e clocks, após isso inicia-se a rotina para atualizar as saídas a cada múltiplo de 100ms, e através disso ocorre a piscada dos leds.
