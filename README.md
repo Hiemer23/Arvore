@@ -1,5 +1,11 @@
 # Árvore de Natal
 
+<div align="center">
+
+![Arvore](Imagens/Arvore.jpeg)
+
+</div>
+
 *******
 ## Sumário
 1. [Materias do Projeto](#materiais-do-projeto-totais)
