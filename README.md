@@ -2,6 +2,12 @@
 
 <div align="center">
 
+![Projeto](Imagens/Arvore.gif)
+
+</div>
+
+<div align="center">
+
 ![Arvore](Imagens/Arvore.jpeg)
 
 </div>
